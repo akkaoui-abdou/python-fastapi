@@ -11,6 +11,20 @@ create a simple project python API with action :
 <li>build image docker</li>
 </ul>
 
+
+tree folder project
+---
+
+<code>
+
+├── app
+│   └── main.py
+├── Dockerfile
+├── README.md
+└── requirements.txt
+
+</code>
+
 Create folder python-fastapi
 ---
 
