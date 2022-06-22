@@ -7,7 +7,7 @@ create a simple project python API with action :
 <li>Create virtual environment python </li>
 <li>Generate file requierements.txt</li>
 <li>Create file Dockerfile </li>
-<li>Install requierements tools</li>
+<li>Install requirements tools</li>
 <li>build image docker</li>
 </ul>
 
@@ -48,7 +48,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-Generate file requierements.txt
+Generate file requirements.txt
 ---
 
 ```bash
