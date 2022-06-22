@@ -102,11 +102,11 @@ build image docker
 ---
 
 ```bash
-docker build -t fastapi-app
+docker build -t fastapi-app .
 ```
 
 
-run server app
+Running with Docker
 ---
 
 ```bash
