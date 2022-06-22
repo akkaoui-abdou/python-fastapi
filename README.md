@@ -49,6 +49,7 @@ touch main.py
 ```
 
 ```python
+
 from typing import Union
 
 from fastapi import FastAPI
@@ -69,7 +70,7 @@ def read_item(item_id: int, q: Union[str, None] = None):
 
 if __name__ == "__main__":
     uvicorn.run(app, port=8000, host="0.0.0.0")
-    
+
 ```
 
 
@@ -81,17 +82,17 @@ touch Dockerfile
 ```
 
 <code>
-FROM python:3.10
+    FROM python:3.10
 
-WORKDIR /fastapi-app
+    WORKDIR /fastapi-app
 
-COPY requirements.txt .
+    COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+    RUN pip install -r requirements.txt
 
-COPY ./app ./app
+    COPY ./app ./app
 
-CMD [ "python3", "./app/main.py" ]
+    CMD [ "python3", "./app/main.py" ]
 </code>
 
 
@@ -105,7 +106,7 @@ docker build -t fastapi-app
 ```
 
 
-<li>run server app</li>
+run server app
 ---
 
 ```bash
