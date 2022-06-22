@@ -15,7 +15,7 @@ create a simple project python API with action :
 tree folder project
 ---
 
-<code>
+```bash
 
 ├── app
 │   └── main.py
@@ -23,7 +23,7 @@ tree folder project
 ├── README.md
 └── requirements.txt
 
-</code>
+```
 
 Create folder python-fastapi
 ---
