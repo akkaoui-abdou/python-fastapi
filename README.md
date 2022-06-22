@@ -69,6 +69,7 @@ def read_item(item_id: int, q: Union[str, None] = None):
 
 if __name__ == "__main__":
     uvicorn.run(app, port=8000, host="0.0.0.0")
+    
 ```
 
 
@@ -112,7 +113,7 @@ docker run -p 8000:8000 fastapi-app
 ```
 
 
-<li>interaction with container</li>
+interaction with container
 ---
 
 ```bash
