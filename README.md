@@ -1,6 +1,6 @@
 Docker Tutorial For Beginners - How To Containerize Python Applications
 ===
-create a simple project python API with action :
+Create a simple project python API with action :
 <ul>
 
 <li>Create folder python-fastapi</li>
