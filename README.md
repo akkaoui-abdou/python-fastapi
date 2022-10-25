@@ -134,3 +134,55 @@ interaction with container
 ```bash
 docker exec -it id_contanier /bin/sh
 ```
+
+Google Kubernetes Engine: Create GKE Cluster
+=========
+export PROJECT_ID=kubernetes-366320
+
+
+```bash
+git clone https://github.com/akkaoui-abdou/python-fastapi.git
+```
+```bash
+docker build -t us.gcr.io/${PROJECT_ID}/fastapi-app:v1 .
+```
+```bash
+docker push us.gcr.io/${PROJECT_ID}/fastapi-app:v1
+```
+
+```bash
+gcloud services enable containerregistry.googleapis.com
+```
+```bash
+gcloud auth configure-docker
+```
+
+
+Create cluster:
+
+```bash
+gcloud config set compute/zone us-central1-a
+```
+
+```bash
+gcloud container clusters create fastapi-cluster --num-nodes=1
+```
+
+```bash
+gcloud container clusters get-credentials fastapi-cluster
+```
+
+
+Deployment application:
+
+```bash
+kubectl create deployment fastapi-app --image=us.gcr.io/${PROJECT_ID}/fastapi-app:v1 
+```
+
+```bash
+kubectl expose deployment fastapi-app --type LoadBalancer --port 8000 --target-port 8000
+```
+
+```bash
+kubectl get service
+```
