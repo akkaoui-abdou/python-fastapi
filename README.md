@@ -137,8 +137,10 @@ docker exec -it id_contanier /bin/sh
 
 Google Kubernetes Engine: Create GKE Cluster
 =========
-export PROJECT_ID=kubernetes-366320
 
+```bash
+export PROJECT_ID=kubernetes-366320
+```
 
 ```bash
 git clone https://github.com/akkaoui-abdou/python-fastapi.git
