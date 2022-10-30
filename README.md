@@ -135,7 +135,7 @@ interaction with container
 docker exec -it id_contanier /bin/sh
 ```
 
-Google Kubernetes Engine: Create GKE Cluster
+Deployer this app with Google Kubernetes Engine: Create GKE Cluster
 =========
 
 ```bash
