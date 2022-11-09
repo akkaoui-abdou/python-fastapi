@@ -1,32 +1,36 @@
-pipeline {
-    agent any
-    
-    parameters {
-        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
-    }
+pipeline{
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-                sh "echo 'hello'"
-                script{
-                    def a = 'varibale '
-                    println a + "groovy" 
-              
-                }
-                echo "${params.Greeting} world!"
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+	agent {label 'linux' }
+	options {
+		buildDiscarder(logRotator(numTokeepStr:'5'))
+	}
+
+	environment {
+		DOCKERHUB_CREDENTIALS = credentials('credential-docker')
+	}
+  stages {
+		stage('Build') {
+		  steps {
+			sh 'docker build -t akkaoui/fastapi-python:latest .'
+		  }
+		}
+		
+		stage('Login') {
+		  steps {
+			sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+		  }
+		}
+		
+		stage('Push') {
+		  steps {
+			sh 'docker push akkaoui/fastapi-python:latest'
+		  }
+		}
+	}
+	post {
+		always {
+		    sh 'docker logout'
+		}
+	}
+
 }
