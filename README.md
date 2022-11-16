@@ -1,5 +1,16 @@
 Docker Tutorial For Beginners - How To Containerize Python Applications
 ===
+
+
+[![developer](https://img.shields.io/badge/Dev-akkaoui-abdou-green?style)](https://github.com/akkaoui-abdou)
+![language](https://img.shields.io/badge/language-python-blue?style)
+[![license](https://img.shields.io/github/license/akkaoui-abdou/python-fastapi)](https://github.com/akkaoui-abdou/python-fastapi/main/LICENSE)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=akkaoui-abdou.python-fastapi")
+[![CI](https://img.shields.io/github/workflow/status/akkaoui-abdou/python-fastapi/Unit%20Tests/develop)](https://github.com/akkaoui-abdou/python-fastapi/actions/workflows/build-and-test.yml?query=event%3Apull_request+branch%3Adevelop)
+
+![fastapi-redis](/static/greens.jpg)
+
+
 Create a simple project python API with action :
 <ul>
 
