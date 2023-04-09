@@ -1,11 +1,15 @@
 FROM python:3.10
 
-WORKDIR /fastapi-app
+ENV CONTAINER_HOME=/usr/src/app
 
-COPY requirements.txt .
+RUN mkdir -p $CONTAINER_HOME
 
-RUN pip install -r requirements.txt
+WORKDIR $CONTAINER_HOME
 
-COPY ./app ./app
+COPY requirements.txt $CONTAINER_HOME
 
-CMD [ "python3", "./app/main.py" ]
+RUN pip install -r $CONTAINER_HOME/requirements.txt
+
+COPY ./app $CONTAINER_HOME
+
+CMD [ "python3", "main.py" ]
