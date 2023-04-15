@@ -95,19 +95,18 @@ Create file Dockerfile
 touch Dockerfile
 ```
 
-<code>
-    FROM python:3.10
 
-    WORKDIR /fastapi-app
+       FROM python:3.10
 
-    COPY requirements.txt .
+       WORKDIR /fastapi-app
 
-    RUN pip install -r requirements.txt
+       COPY requirements.txt .
 
-    COPY ./app ./app
+       RUN pip install -r requirements.txt
 
-    CMD [ "python3", "./app/main.py" ]
-</code>
+       COPY ./app ./app
+
+       CMD [ "python3", "./app/main.py" ]
 
 
 
